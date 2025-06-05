@@ -1,4 +1,4 @@
-const Delivery = require('/models/Delivery');
+const Delivery = require('../models/delivery');
 const { io } = require('../server');
 // Get all deliveries
 exports.getDeliveries = async (req, res) => {
