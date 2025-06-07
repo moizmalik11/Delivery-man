@@ -14,4 +14,5 @@ router.get('/me', auth, authController.getMe);
 router.get('/admin/users', auth, authController.getAllUsers);
 router.delete('/admin/users/:id', auth, authController.deleteUser);
 
+
 module.exports = router;
