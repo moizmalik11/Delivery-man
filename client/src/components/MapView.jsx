@@ -11,14 +11,7 @@ import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 
 
-const MapView = ({ location, deliveries }) => {
-  const [map, setMap] = useState(null);
 
-  useEffect(() => {
-    if (map && location) {
-      map.setView([location.lat, location.lng], 13);
-    }
-  }, [location, map]);
 
   return (
     <div className="h-96 w-full rounded-lg overflow-hidden shadow-md">
