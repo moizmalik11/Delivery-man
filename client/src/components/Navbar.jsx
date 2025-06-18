@@ -16,13 +16,16 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-elevated sticky top-0 z-50">
+
       <div className="container h-16 flex justify-between items-center">
         <Link 
           to="/" 
           className="text-2xl font-bold text-primary hover:text-primary/90 transition-colors duration-200"
         >
+        hello
           DeliveryMan
         </Link>
+        
         
         <div className="flex items-center space-x-2">
           <Link to="/" className={linkClass('/')}>
