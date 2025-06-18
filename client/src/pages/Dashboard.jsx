@@ -88,6 +88,9 @@ const Dashboard = ({ socket }) => {
       <div>
         <h2 className="text-xl font-semibold mb-2">Recent Deliveries</h2>
         <DeliveryList deliveries={deliveries.slice(0, 5)} />
+        {deliveries.length === 0 && (
+          <p className="text-gray-500">No deliveries found.</p>
+        )}
       </div>
     </div>
   );
