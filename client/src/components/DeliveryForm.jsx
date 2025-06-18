@@ -7,6 +7,8 @@ const DeliveryForm = ({ onSubmit, isLoading }) => {
     address: "",
     phone: "",
     deliveryInstructions: "",
+
+
   });
 
   const [errors, setErrors] = useState({});
@@ -40,6 +42,7 @@ const DeliveryForm = ({ onSubmit, isLoading }) => {
     let error = "";
     switch (name) {
       case "name":
+        console.log(value);
         if (!value.trim()) error = "Name is required";
         break;
       case "address":
@@ -52,9 +55,10 @@ const DeliveryForm = ({ onSubmit, isLoading }) => {
       default:
         break;
     }
+
     setErrors((prev) => ({ ...prev, [name]: error }));
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
