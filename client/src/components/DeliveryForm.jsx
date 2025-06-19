@@ -43,6 +43,7 @@ const DeliveryForm = ({ onSubmit, isLoading }) => {
     switch (name) {
       case "name":
         console.log(value);
+        break;
         if (!value.trim()) error = "Name is required";
         break;
       case "address":

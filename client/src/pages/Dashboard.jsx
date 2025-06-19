@@ -84,16 +84,23 @@ const Dashboard = ({ socket }) => {
         />
       </div>
       
-      {/* Recent Deliveries */}
+     {/* Recent Deliveries */}
       <div>
-        <h2 className="text-xl font-semibold mb-2">Recent Deliveries</h2>
-        <DeliveryList deliveries={deliveries.slice(0, 5)} />
+        <div className="flex justify-between items-center mb-2">
+          <h2 className="text-xl font-semibold">Recent Deliveries</h2>
+          <a
+            href="/deliveries"
+            className="text-primary hover:underline text-sm"
+          >
+            View All
+          </a>
+        </div>
+        <DeliveryList deliveries={deliveries.slice(0, 10)} />
         {deliveries.length === 0 && (
           <p className="text-gray-500">No deliveries found.</p>
         )}
       </div>
     </div>
-  );
-};
+    );};  
 
 export default Dashboard;
