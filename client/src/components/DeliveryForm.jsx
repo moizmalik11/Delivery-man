@@ -25,10 +25,15 @@ const DeliveryForm = ({ onSubmit, isLoading }) => {
   };
 
   const handleChange = (e) => {
+    // Update form data and validate field on change
+    setTouched((prev) => ({ ...prev, [e.target.name]: true }));
+    // Destructure name and value from event target
+
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (touched[name]) {
       validateField(name, value);
+      
     }
   };
 
