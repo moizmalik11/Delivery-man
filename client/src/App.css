@@ -20,6 +20,10 @@
   background-size: 200% 200%;
   background-position: 0% 50%;
 
+  background-image: linear-gradient(135deg, #646cff, #61dafb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
