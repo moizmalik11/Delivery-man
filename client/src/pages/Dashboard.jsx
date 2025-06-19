@@ -58,7 +58,9 @@ const Dashboard = ({ socket }) => {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
-      
+      <p className="text-gray-600 mb-4">
+        Welcome to the Delivery Management Dashboard. Here you can view and manage all deliveries.
+      </p>
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="bg-white p-4 rounded-lg shadow">
