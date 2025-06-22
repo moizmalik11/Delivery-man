@@ -55,9 +55,7 @@ const DeliveryForm = ({ onSubmit, isLoading }) => {
         break;
         if (!value.trim()) error = "Name is required";
         break;
-      case "address":
-        if (!value.trim()) error = "Address is required";
-        break;
+     
       case "phone":
         if (!value.trim()) error = "Phone is required";
         else if (!/^\d{10}$/.test(value)) error = "Please enter a valid 10-digit phone number";
