@@ -46,6 +46,10 @@ const DeliveryForm = ({ onSubmit, isLoading }) => {
   const validateField = (name, value) => {
     let error = "";
     switch (name) {
+      case "phone":
+        if (!value.trim()) error = "Phone is required";
+        else if (!/^\d{10}$/.test(value)) error = "Please enter a valid 10-digit phone number";
+        break;
       case "name":
         console.log(value);
         break;
