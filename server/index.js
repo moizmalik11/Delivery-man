@@ -20,7 +20,7 @@ io.on("connection", (socket) => {
           // Add any other fields you want to store
           // For example, you can add a timestamp or other metadata
           // updatedAt: new Date(), // Optional, if you want to track when the data was last updated
-          
+
           ...data,
           updatedAt: new Date(),
         },
@@ -31,6 +31,15 @@ io.on("connection", (socket) => {
       io.emit("receive-location", data);
     } catch (err) {
       console.error("MongoDB update error:", err);
+    }
+  });
+  socket.on("get-riders", async () => {
+    try {
+      const riders = await Rider.find({});
+      socket.emit("riders-list", riders);
+    } catch (err) {
+      console.error("MongoDB fetch error:", err);
+      socket.emit("error", "Failed to fetch riders");
     }
   });
 
