@@ -9,6 +9,18 @@ io.on("connection", (socket) => {
       await Rider.findOneAndUpdate(
         { riderId: data.riderId },
         {
+          riderId: data.riderId,
+          name: data.name,
+          location: {
+            type: "Point",
+            coordinates: [data.longitude, data.latitude],
+          },
+          avatarUrl: data.avatarUrl || null, // Optional field
+          status: data.status || "idle", // Default to 'idle' if not provided
+          // Add any other fields you want to store
+          // For example, you can add a timestamp or other metadata
+          // updatedAt: new Date(), // Optional, if you want to track when the data was last updated
+          
           ...data,
           updatedAt: new Date(),
         },
